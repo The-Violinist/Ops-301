@@ -1,0 +1,12 @@
+David Armstrong 09-01-2020
+
+Computer networks can be comprised of anything from 2 computers directly connected all the way up to a WAN that covers an entire country.
+Each type is catered to the general purpose and size of the network. Within networks there are common physical devices which connect devices -- 
+routers, switches, cables -- as well as the methods of connection -- ip addresses, ports, etc.
+
+Network architecture is described as network topology. There are 4 main types: Bus, Ring, Star, and Mesh. 
+Within these, star is the most common today, not necessarily because of cost, but for the availability and functionality. 
+
+Along with the connectivity comes a need for security, and this is a major consideration when designing a network. 
+In addition to security another major consideration when designing a larger network is load balancing in order to 
+avoid bottlenecks and to reduce possible single points of failure. 
