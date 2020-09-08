@@ -1,0 +1,17 @@
+#Ops Challenge 06
+#David Armstrong
+#09-07-2020
+#Run bash commands from py code
+
+import os
+
+#Function
+def sys(var1):
+    os.system(var1)
+
+#Main
+sys("ls")
+sys("whoami")
+sys("ip a")
+sys("sudo lshw -short")
+#End
