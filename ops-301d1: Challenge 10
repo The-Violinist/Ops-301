@@ -1,0 +1,39 @@
+#Script Name: Ops Challenge 10
+#Author: David Armstrong
+#Date of last revision: 09-11-2020
+#Description of purpose: To use conditionals
+
+#Declaration of variables
+a = 1
+b = 10
+
+#Main
+if (a == b):
+    print("They are equal.")
+
+if (a < b):
+    print("a is less than b.")
+
+if (a > b):
+    print("True")
+elif (a != b):
+    print("a does not equal b")
+else:
+    print("That's ok)")
+
+if (a > b):
+    print("a is greater than b")
+elif (a <= b):
+    print("True, and")
+    if (a == b/10):
+        print("This is true")
+    else:
+        print("continuing")
+else:
+    print("Done")
+
+if (a >= b):
+    print("That's it")
+else:
+    print("a is not greater than or equal to b")
+#End
