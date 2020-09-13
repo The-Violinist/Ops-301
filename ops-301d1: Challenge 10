@@ -16,10 +16,10 @@ if (a < b):
 
 if (a > b):
     print("True")
-elif (a != b):
+elif (a*10 != b):
     print("a does not equal b")
 else:
-    print("That's ok)")
+    print("That's ok")
 
 if (a > b):
     print("a is greater than b")
