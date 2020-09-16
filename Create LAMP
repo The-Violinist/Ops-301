@@ -1,0 +1,48 @@
+In order to create a lamp with Ubuntu/Trusty64, Apache2, MySQL, and PHP5 do this procedure:
+You must have Vagrant (https://www.vagrantup.com/), VirtualBox (https://www.virtualbox.org/),
+VirtualBox Extension Pack, and Git Bash (https://gitforwindows.org/) installed.
+
+Open VirtualBox
+Open Git Bash
+In Git Bash enter the following commands 1 line at a time: 
+
+vagrant init ubuntu/trusty64
+vagrant up
+vagrant ssh
+
+This completes the installation of Ubuntu/Trusty64 into VirtualBox
+Continue to install the other apps
+
+In Git Bash enter the following commands 1 line at a time:
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install vim
+sudo apt-get install apache2
+sudo apt-get install mysql-server libapache2-mod-auth-mysql php5-mysql
+sudo mysql_install_db
+sudo /usr/bin/mysql_secure_installation
+sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
+sudo apt-get install php5-cgi php5-cli php5-curl php5-common php5-gd php5-mysql
+sudo service apache2 restart
+
+This completes the LAMP package setup
+In order to upload this package to the Vagrant site, do the following:
+
+In the Ubuntu terminal enter the following commands 1 line at a time:
+
+sudo apt-get clean
+sudo dd if=/dev/zero of=/EMPTY bs=1M
+sudo rm -f /EMPTY
+cat /dev/null > ~/.bash_history && history -c && exit
+
+This exits the VM. Enter the following command in Git Bash to create the package:
+
+vagrant package --output your-filename.box
+
+This new box can be uploaded to the Vagrant site by first creating an account on the site.
+Then enter the following command:
+
+vagrant cloud publish your-vagrant-account-name/your-box-name version-in-format-0.0.0 virtual-platform your-filename.box
+
+Follow the on-screen prompts to finish the upload
