@@ -1,4 +1,6 @@
 #!/usr/bin/python
+
+###THIS WILL OVERWRITE ALL PYTHON FILES...DON'T RUN!###
 '''
 import os
 import datetime
