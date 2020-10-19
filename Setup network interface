@@ -2,14 +2,14 @@ sudo ifconfig [adapter name] up
 sudo nano /etc/netplan/50-cloud-init.yaml
 
 #Add the following to the file you just opened (be careful about spaces):
-
+###
 network:
     version: 2
     renderer: networkd
     ethernets:
       enp0s3:
         dhcp4: yes
-
+###
 #Save file under the same name
 
 sudo netplan apply
