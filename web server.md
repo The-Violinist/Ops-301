@@ -1,0 +1,8 @@
+# What is a web server?
+## David Armstrong 09-10-2020
+
+A web server is comprised of 2 main components: the physical server upon which the site resides and the software that runs the site. The physical server is what stores all of the necessary files and connects with the internet to send responses to requests. The software side abides by certain rules, using protocols such as HTTP. There are 2 main categories of servers: static and dynamic. The static server holds files that it sends to client computers. Dynamic on the other hand stores the content in a database and fills in templates which it then sends to the clients.
+
+While one could host a server on their own computer, the benefits of using a dedicated host are compelling: almost non-stop availability, dedicated IP address, and it is maintained by a third party. As stated before, web servers utilize HTTP. With this protocol, a server waits for a client to send a request. When the request is received, it searches for the files and data associated with the requested site and returns them to the client. 
+
+For servers that need to have a degree of accessibility from the outside but also require good security, a setup called a DMZ is utilized. This is the same principle as a real world DMZ. There are 2 setups which can be used to accomplish this -- either with a single router with multiple interfaces, or the more secure topology using 2 routers. The idea is to have a zone of the network which has some mild security (the first firewall) into which outside traffic is allowed. The server in the DMZ can then access the more secured zone behind a second more strict firewall thereby providing a greater level of security while still assuring availability. 
