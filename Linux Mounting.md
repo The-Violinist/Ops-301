@@ -1,6 +1,7 @@
 # How to mount a drive on Linux
 
 *This is a boiled down version of https://linuxize.com/post/how-to-install-virtualbox-guest-additions-in-ubuntu/*
+
 *For this example I am using the VBox Guest Additions iso*
 - Connect the downloaded extensions to the VM by going to Settings>Storage>Right-click Controller>+Optical Drive
 - Select “VBoxGuestAdditions.iso” and click Choose
