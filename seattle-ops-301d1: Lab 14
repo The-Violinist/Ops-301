@@ -1,1 +1,0 @@
-SELECT * from SalesLT.Product WHERE ListPrice < 30
