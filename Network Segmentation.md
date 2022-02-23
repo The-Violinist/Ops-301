@@ -1,4 +1,4 @@
-# What is Netword Segmentation?
+# What is Network Segmentation?
 ## David Armstrong 09-08-2020
 
 Network Segmentation is a way in which network administrators can break up a single network into small chunks, or segments. This is done for many reasons. The primary purpose is to create greater security. In much of the security world today, there is (rightly so) a commonly adopted strategy known as zero trust. This assumes that anyone can and will do harm to the system whether intentional or accidental.
