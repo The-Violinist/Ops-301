@@ -1,5 +1,5 @@
 # What is SQL
-##David Armstrong 09-17-2020
+## David Armstrong 09-17-2020
 
 SQL, or structured query language, is a means of accessing and manipulating data within its database. Databases are used through what is called a database management system (DBMS). There are 4 types of DBMS: Hierarchical, Network, Relational, and Object oriented. Of these, SQL falls into the relational.
 
